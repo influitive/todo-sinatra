@@ -4,6 +4,8 @@ gem "rake"
 gem "sinatra", :require => ["sinatra/base"]
 gem "activerecord", :require => ["active_record"]
 gem "erubis"
+gem "pg", :platforms => :ruby
+gem "unicorn"
 
 platforms :ruby_18, :jruby do
   gem "require_relative"
@@ -13,7 +15,6 @@ end
 
 group :production do
   gem "mysql2", :platforms => :ruby
-  gem "pg", :platforms => :ruby
   gem "puma", :platforms => :ruby
   gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
   gem "trinidad", :platforms => :jruby
